@@ -1,0 +1,9 @@
+<app-user-form actionType="create" 
+  (userCreateEvent)="create($event)">
+</app-user-form>
+<app-user-list 
+  [users]="users"
+  (userDestroyEvent)="destroy($event)"
+  (userEditEvent)="edit($event)">
+</app-user-list>
+ 

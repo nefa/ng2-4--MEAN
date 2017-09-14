@@ -1,0 +1,10 @@
+<h3>{{action}} </h3>
+
+<form >
+  <input type="text" [(ngModel)]="user.first_name" name="first_name">
+  <input type="text" [(ngModel)]="user.last_name" name="last_name">
+  <input type="text" [(ngModel)]="user.email" name="email">
+  <input type="button" class="btn btn-primary" value="submit"
+    (click)="onSubmit(); $event.preventDefault()">
+  
+</form>

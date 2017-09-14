@@ -1,0 +1,25 @@
+<div class="users-list">
+
+  <h2>Users:</h2>
+  <ul class="list-group">
+    <li class="list-group-item" 
+      *ngFor="let user of users">
+      <span>{{user.first_name}} {{user.last_name}}</span> -- 
+      {{user.email}} <span class="glyphicon glyphicon-envelope"></span>
+      ||
+      <button type="button" class="btn"
+        (click)="user.editable = !user.editable">Edit</button>
+      ||
+      <button type="button" class="btn btn-danger" 
+        (click)="destroy(user)">Delete</button>
+      <br />
+      <a href="#">Messages <span class="badge">5</span></a><br>
+
+      <app-user-form *ngIf="user.editable"
+        actionType="edit"
+        [user]="user"
+        (userEditEvent)="edit($event); (user.editable = !user.editable)">
+      </app-user-form>
+    </li>
+  </ul>
+</div>
